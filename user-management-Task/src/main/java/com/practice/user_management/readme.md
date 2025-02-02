@@ -1,87 +1,77 @@
-# User Management System
+User Management System
 
-This project is a Spring Boot-based User Management System that provides user registration, authentication, and administrative functionalities. It includes security features such as Basic Authentication, IP tracking, Swagger documentation, JUnit test cases, and Dockerization for easy deployment.
+This is a Spring Boot-based User Management System that allows users to register, authenticate, and provides admin functionalities. It includes security features like Basic Authentication, IP tracking, Swagger documentation, JUnit test cases, and Docker support for easy deployment.
 
-## Features
+Features:
+==================================================================================================================================
+Users can register with their name, email, gender, and password.
 
-1. **User Registration**: Allows users to register with Name, Email, Gender, and Password.
-2. **Unique Email Validation**: Ensures no duplicate email registration.
-3. **IP Address & Country Tracking**: Stores user's IP address and country details using [ipify](https://www.ipify.org/) and [ip-api](https://ip-api.com/).
-4. **User Authentication**: API to validate users with Email and Password.
-5. **Basic Authentication Security**: Protects API endpoints with authentication.
-6. **Admin Privileges**:
-   - View all registered users.
-   - Delete a user by email.
-7. **JUnit Test Cases**: Service layer tested using JUnit.
-8. **Swagger Documentation**: API testing and documentation.
-9. **Dockerized Application**: Supports containerized deployment.
+Email addresses must be unique to prevent duplicate registrations.
 
-## API Endpoints
+The system tracks the user's IP address and country.
 
-### 1. User Registration
-**Endpoint:** `POST /api/users/register`
-**Description:** Registers a new user.
+Users can authenticate using their email and password.
 
-### 2. Health Check
-**Endpoint:** `GET /api/users/health`
-**Description:** Checks if the service is running.
+Basic Authentication is implemented for security.
 
-### 3. User Authentication
-**Endpoint:** `GET /api/users/authenticate`
-**Description:** Authenticates a user by email and password.
+Admin users have the ability to view all registered users and delete a user by email.
 
-### 4. Get All Users (Admin Only)
-**Endpoint:** `GET /api/users/all`
-**Description:** Retrieves all registered users (Admin access required).
+JUnit test cases are included for the service layer.
 
-**Admin Details:**
-Username :admin
-Password : admin123 .
+API documentation and testing are available through Swagger.Url=http://localhost:8080/swagger-ui/index.html
 
-provide username and password in Authorization and select type "Basic Auth" in Postman
+The application can be containerized using Docker.
+===========================================================================================================================================================================================================================
+API Endpoints:
+=========================
 
+User Registration: Users can register with their details. url=http://localhost:8080/api/users/register
 
-### 5. Delete User (Admin Only)
-**Endpoint:** `DELETE /api/users/delete`
-**Description:** Deletes a user by email (Admin access required).
+Health Check: A simple endpoint to check if the service is running. url=http://localhost:8080/api/users/health
 
-**Admin Details:**
-Username :admin
-Password : admin123 .
+User Authentication: Users can log in using their email and password. url=http://localhost:8080/api/users/authenticate
 
-provide username and password in Authorization and select type "Basic Auth" in Postman
+Get All Users (Admin Only): Admins can view a list of all registered users.  url=http://localhost:8080/api/users/all
 
-## Running the Application
+Delete User (Admin Only): Admins can remove a user from the system using their email.url= http://localhost:8080/api/users/delete
 
-### Prerequisites
-- Java 17+
-- Maven
-- Docker
+For admin endpoints, use the following credentials:
 
-### Build and Run Locally
-```sh
+Username: admin
+
+Password: admin123
+
+In Postman, select "Basic Auth" and enter the credentials when making requests.
+=================================================================================================================================================================================================================
+Running the Application:
+
+You need Java 17+, Maven, and Docker installed.
+
+To build and run the application locally, use Maven.
+
+The application can also be run inside a Docker container.
+===================================================================================================
+Testing:
+
+The APIs can be tested using Postman or Swagger UI.
+
+JUnit test cases can be executed to verify the service layer functionality.
+===================================================================================================================================
+Deployment:
+==========================
+Build the application using Maven.
+
+Create a Docker image and run it.
+===============
+build and run locally
+
 mvn clean install
 mvn spring-boot:run
-```
+### Build and Run with Docker 
 
-### Build and Run with Docker
-```sh
 docker build -t user-management-task .
 docker run -p 8080:8080 user-management-task
-```
-
-## Testing
-- Use **Postman** or **Swagger UI** to test the APIs.
-- Swagger UI: `http://localhost:8080/swagger-ui.html`
-- Run JUnit tests using:
-  ```sh
-  mvn test
-  ```
-
-## Deployment
-1. Build the application with Maven.
-2. Create a Docker image and run it.
-3. Expose the API for usage.
 
 
+The API can then be accessed and used accordingly.
 
