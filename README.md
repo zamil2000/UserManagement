@@ -1,6 +1,7 @@
 User Management System
 =========================
-This is a Spring Boot-based User Management System that allows users to register, authenticate, and provides admin functionalities. It includes security features like Basic Authentication, IP tracking, Swagger documentati
+This is a Spring Boot-based User Management System that allows users to register, authenticate, and provides admin functionalities.
+It includes security features like Basic Authentication, IP tracking, Swagger documentation.
 
 Features:
 ============
@@ -45,4 +46,4 @@ spring-boot: run
 ###
 Build and Run with Docker
 docker build -t user-management-task .
- docker run -p 8080:8080 user-management-task
+docker run -p 8080:8080 user-management-task
